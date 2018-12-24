@@ -1,0 +1,18 @@
+<form class="row" *ngIf="loginForm" [formGroup]="loginForm" >
+  <div class="col-12" *ngFor="let field of fields">
+    <div >
+      <ngx-field-group
+        [field]="field"
+        [configForm]="loginForm"
+        [controlName]="field.model"
+        [mask]="field.mask"
+        [placeholder]="field.placeHolder"
+        [options]="field.listValue"
+      >
+      </ngx-field-group>
+    </div>
+  </div>
+  <div class="col-12 text-center margin-t-10">
+    <span [ngClass]="{'button-disabled ': loginForm.invalid}" (click)="login(loginForm.value, loginForm.valid)" class="button-app-primary button-lg inline-button center">{{'LOGIN_BUTTON' | translate}}</span>
+  </div>
+</form>

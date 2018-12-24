@@ -1,0 +1,68 @@
+//Fonts
+$font-paragraph: 'Dosis', sans-serif;
+$font-titles: 'Thasadith', sans-serif;
+
+//colors
+$primary-color: #2b729f;
+$primary-color-contrast: #173a53;
+$alternative-color: #ffa000;
+$alternative-color-contrast: #ac6d04;
+$gray: #1a1a1a;
+$gray-contrast: #000000;
+$border: #d5dce0;
+$success-color: #34b551;
+$alert-color: #ff671d;
+$error-color: #ff4e44;
+
+
+// Utilities
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+
+// Responsive
+@mixin all-mobile {
+  @media only screen and (max-width: 991px) {
+    @content;
+  }
+}
+
+
+
+@mixin xs {
+  @media only screen and (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media only screen and (min-width: 577px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    @content;
+  }
+}
+
+
+@mixin lg {
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
+    @content;
+  }
+}
+
+
+@mixin xlg {
+  @media only screen and (min-width: 1501px)  {
+    @content;
+  }
+}

@@ -1,0 +1,5 @@
+<div class="bg-series-tooltip" *ngFor="let item of data" [ngStyle]="{'border-color':  item.color }">
+  <h3>{{item.series}}</h3>
+  <p> {{item.value | currency}}</p>
+  <p>{{item.name | date}}</p>
+</div>

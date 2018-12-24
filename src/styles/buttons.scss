@@ -1,0 +1,293 @@
+.button-app-outline{
+  border-radius: 7px;
+  border: 1px solid $primary-color;
+  cursor: pointer;
+  color: $primary-color !important;
+  font-family: $font-titles;
+  font-weight: bold;
+  i{
+    vertical-align: middle;
+  }
+  &:hover{
+    background-color: $primary-color;
+    color: #fff !important;
+    @include transition(all 0.5s ease-in-out);
+  }
+
+}
+
+
+.button-app-outline-white{
+  border-radius: 7px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  color: #fff !important;
+  font-family: $font-titles;
+  font-weight: bold;
+  i{
+    vertical-align: middle;
+  }
+  &:hover{
+    background-color: #fff ;
+    color:  $primary-color !important;
+    @include transition(all 0.5s ease-in-out);
+  }
+
+}
+
+
+.button-app-outline-alternative{
+  border-radius: 7px;
+  border: 1px solid $alternative-color;
+  cursor: pointer;
+  color: $alternative-color !important;
+  font-family: $font-titles;
+  font-weight: bold;
+  i{
+    vertical-align: middle;
+  }
+  &:hover{
+    background-color: $alternative-color;
+    color: #fff !important;
+    @include transition(all 0.5s ease-in-out);
+  }
+
+}
+
+
+.button-app-white{
+  border-radius: 7px;
+  cursor: pointer;
+  background: #fff;
+  color: $primary-color !important;
+  position: relative;
+  &:hover{
+    background-color: $primary-color;
+    color:   #fff !important;
+    @include transition(all 0.5s ease-in-out);
+    i{
+      position: absolute;
+      right: 12px;
+      @include transition(all 0.5s ease-in-out);
+    }
+  }
+  i {
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    margin-top: -9px;
+  }
+}
+
+
+.button-app-white-alternative{
+  border-radius: 7px;
+  cursor: pointer;
+  background: #fff;
+  color: $alternative-color-contrast !important;
+  position: relative;
+  &:hover{
+    background-color: $alternative-color-contrast;
+    color:   #fff !important;
+    @include transition(all 0.5s ease-in-out);
+    i{
+      position: absolute;
+      right: 12px;
+      @include transition(all 0.5s ease-in-out);
+    }
+  }
+  i {
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    margin-top: -9px;
+  }
+}
+
+.button-app-alternative{
+  border-radius: 7px;
+  cursor: pointer;
+  color: #fff !important;;
+  background-color: $alternative-color;
+  font-family: $font-titles;
+  font-weight: bold;
+  &:hover{
+    @include transition(all 0.5s ease-in-out);
+    background-color: $alternative-color-contrast;
+  }
+  i{
+    vertical-align: middle;
+  }
+}
+
+
+.button-app-cancel {
+  border-radius: 7px;
+  cursor: pointer;
+  color: #9aa9b9;
+  background-color: #fff;
+  font-family: $font-titles;
+  font-weight: bold;
+  i{
+    vertical-align: middle;
+  }
+}
+
+
+.button-app-primary{
+  border-radius: 7px;
+  background-color: $primary-color;
+  cursor: pointer;
+  color: #fff !important;
+  border: 1px solid transparent;
+  font-family: $font-titles;
+  font-weight: bold;
+  &.light{
+    font-family: $font-titles;
+    font-weight: 300;
+    font-style: normal;
+  }
+  &.uppercase{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  i{
+    vertical-align: middle;
+  }
+  &:hover{
+    background-color: #fff;
+    color: $primary-color !important;
+    border: 1px solid $primary-color;
+    @include transition(all 0.5s ease-in-out);
+  }
+}
+
+
+.button-app-gradient{
+  border-radius: 7px;
+  background-image: linear-gradient(257deg, $primary-color, $primary-color-contrast);
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  color: #fff !important;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+  &:hover{
+    background-image: linear-gradient(257deg, $primary-color, $primary-color-contrast);
+    @include transition(all 0.5s ease-in-out);
+    box-shadow: none;
+    i{
+      position: absolute;
+      right: 12px;
+      @include transition(all 0.5s ease-in-out);
+    }
+  }
+  i{
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    margin-top: -9px;
+  }
+}
+
+.inline-button{
+  display: inline-block;
+}
+
+.center{
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.center-sm{
+  @include all-mobile(){
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    width: 300px;
+    text-align: center;
+  }
+}
+
+.block-button{
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.with-out-border{
+  box-shadow: none;
+  border: none;
+}
+
+.button-xs{
+  padding: 6px 16px;
+  font-size: 13px;
+}
+
+.button-xs-weight{
+  padding: 8px 50px;
+  font-size: 13px;
+}
+
+.button-sm{
+  padding: 8px 12px;
+  font-size: 15px;
+  &.w-icon{
+    padding: 8px 20px 8px 12px;
+  }
+}
+
+.button-md{
+  padding: 12px 27px;
+  font-size: 18px;
+  &.w-icon{
+    padding: 12px 45px 12px 27px;
+  }
+}
+
+.button-lg{
+  padding: 12px 32px;
+  font-size: 23px;
+  &.w-icon{
+    padding: 12px 45px 12px 27px;
+  }
+}
+
+.button-round{
+  border-radius: 50%;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  &.white{
+    background-color: #fff;
+  }
+  &.sm{
+    width: 50px;
+    height: 50px;
+    line-height: 63px;
+    i{
+      font-size: 23px;
+    }
+  }
+}
+
+
+.button-disabled {
+  cursor: not-allowed;
+  background-color: #e6ebf1;
+  color: #fff !important;
+  border: transparent;
+  &:hover{
+    background-color: #e6ebf1;
+    color: #fff !important;
+  }
+}

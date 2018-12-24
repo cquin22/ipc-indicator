@@ -1,0 +1,27 @@
+<div class="top-header" (clickOutside)="close()">
+  <div class="col text-right" >
+    <ul class="menu" >
+      <li *ngFor="let menu of dataMenu ; let i = index" >
+        <div class="link" *ngIf="menu.type === 'LINK'">
+          <span class="fas fa-chevron-down" *ngIf="menu.isParent"></span>
+          <span *ngIf="menu.textTypeRender === 'TRANSLATE'">{{menu.title | translate}}</span>
+          <span *ngIf="menu.textTypeRender === 'TEXT'">{{menu.title}}</span>
+        </div>
+        <div class="only-icon" *ngIf="menu.type === 'ONLY_ICON'">
+          <i class="material-icons">
+            {{menu.icon}}
+          </i>
+        </div>
+        <div class="user-info" *ngIf="menu.type === 'USER_INFO'">
+          <div class="content-user">
+            <i class="material-icons">
+              {{menu.icon}}
+            </i>
+            <span>{{menu.title}}</span>
+          </div>
+
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

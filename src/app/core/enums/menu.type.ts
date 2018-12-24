@@ -1,0 +1,8 @@
+export enum MenuType {
+  LINK = 'LINK',
+  USER_INFO = 'USER_INFO',
+  SHOPPING_CART = 'SHOPPING_CART',
+  ONLY_ICON = 'ONLY_ICON',
+  ONLY_TEXT = 'ONLY_TEXT',
+  ICON_AND_TEXT = 'ONLY_TEXT'
+}

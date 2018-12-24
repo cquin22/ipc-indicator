@@ -1,0 +1,25 @@
+@for $i from 1 through 100 {
+  .margin-t-#{$i} {
+    margin-top: 1px * $i;
+  }
+}
+
+@for $i from 1 through 100 {
+  .margin-l-#{$i} {
+    margin-left: 1px * $i;
+  }
+}
+
+
+@for $i from 1 through 100 {
+  .height-size-in-vh-#{$i} {
+    height: 1vh * $i;
+  }
+}
+
+
+@for $i from 1 through 100 {
+  .height-size-in-px-#{$i} {
+    height: 1px * $i;
+  }
+}

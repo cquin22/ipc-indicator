@@ -1,0 +1,73 @@
+@import "../../../../../styles/variables";
+.bg-box-left-menu{
+  position: fixed;
+  width: 250px;
+  height: 100%;
+  background-color: #222f3c;
+  top: 0;
+  left: -251px;
+  z-index: 90;
+  &.active{
+    left: 0;
+  }
+  @include transition(all 0.5s ease-in-out);
+  .left-menu-header{
+    padding: 11px 0px;
+    background-color: $primary-color;
+    margin-bottom: 25px;
+    text-align: center;
+    img{
+      width: 68px;
+    }
+  }
+  .left-menu-content{
+    ul{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      i{
+        vertical-align: middle;
+        font-size: 20px;
+        margin-right: 7px;
+      }
+      span{
+        vertical-align: middle;
+        margin-top: 2px;
+      }
+      li{
+        color: #fff;
+        padding: 12px;
+        cursor: pointer;
+        border-left: 12px solid transparent;
+        font-size: 13px;
+        &.active{
+          background-color: #161f2c;
+          border-left: 12px solid $primary-color;
+        }
+        &:hover{
+          background-color: #161f2c;
+          @include transition(all 0.5s ease-in-out);
+        }
+      }
+    }
+  }
+}
+
+
+.link-sub-menu{
+
+  background-color: #161f2c;
+  ul{
+    li{
+      font-size: 11px !important;
+      padding-left: 50px !important;
+      &.active{
+        background-color: #0d111b !important;
+        border-right: 12px solid $primary-color !important;
+      }
+      &:hover{
+        background-color: #0d111b !important;
+      }
+    }
+  }
+}

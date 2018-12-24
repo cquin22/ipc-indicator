@@ -1,0 +1,32 @@
+@import "../../../../styles/variables";
+.form-container{
+    width: 65%;
+    padding: 35px;
+    position: absolute;
+    left: 50%;
+    margin-left: -35%;
+    height: 450px;
+    top: 50%;
+    margin-top: -225px;
+    @include xs(){
+      width: 95%;
+      left: 2%;
+      margin-left: 0;
+      right: 2%;
+    }
+    @include xlg() {
+      max-width: 900px;
+      margin-left: -450px;
+    }
+}
+
+
+.logo{
+  text-align: center;
+  padding: 21px;
+  img{
+    text-align: center;
+    padding: 21px;
+    width: 140px;
+  }
+}

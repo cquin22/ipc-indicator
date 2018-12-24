@@ -1,0 +1,21 @@
+<div class="bg-box-left-menu"  [ngClass]="{'active': showMenu}">
+  <div class="left-menu-header">
+    <img class="mw-100" src="./assets/white-logo.png">
+  </div>
+  <div class="left-menu-content">
+    <div  *ngFor="let menu of listMenu; let i = index" >
+      <ul>
+        <li [routerLink]="menu.link" routerLinkActive="active" >
+          <i class="material-icons">
+            {{menu.icon}}
+          </i>
+          <span>{{menu.title | translate}}</span>
+          <i  *ngIf="menu.isParent" class="material-icons">
+            keyboard_arrow_down
+          </i>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>
