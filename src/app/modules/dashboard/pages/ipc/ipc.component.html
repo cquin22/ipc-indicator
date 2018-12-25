@@ -1,4 +1,7 @@
-<div class="row">
+<div *ngIf="!ipcList" class="text-center">
+  <app-loader></app-loader>
+</div>
+<div class="row" *ngIf="ipcList">
   <div class="col-sm-12">
     <div class="box-panel">
       <div class="box-panel-header">

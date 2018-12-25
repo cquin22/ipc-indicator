@@ -12,12 +12,12 @@
             {{menu.icon}}
           </i>
         </div>
-        <div class="user-info" *ngIf="menu.type === 'USER_INFO'">
+        <div class="user-info" *ngIf="user && menu.type === 'USER_INFO'">
           <div class="content-user">
             <i class="material-icons">
               {{menu.icon}}
             </i>
-            <span>{{menu.title}}</span>
+            <span>{{user.email}}</span>
           </div>
 
         </div>

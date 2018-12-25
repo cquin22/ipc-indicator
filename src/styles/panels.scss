@@ -4,6 +4,10 @@
   padding-top: 95px;
   padding-right: 25px;
   position: relative;
+  @include all-mobile() {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
 }
 
 

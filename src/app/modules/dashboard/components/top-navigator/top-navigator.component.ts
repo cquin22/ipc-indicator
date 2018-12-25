@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {IMenu} from '../../../../core/interfaces/i-menu';
+import {AuthenticationRepositoryService} from '../../../../security/authentication-repository.service';
+import {IUser} from '../../../../core/interfaces/i-user';
 
 @Component({
   selector: 'app-top-navigator',
@@ -12,10 +14,16 @@ export class TopNavigatorComponent implements OnInit {
 
   public selectedIndex: any;
   public isOpenSubMenu: boolean;
+  public user: IUser;
 
-  constructor() { }
+  constructor(
+    private authenticationRepositoryService: AuthenticationRepositoryService
+  ) { }
 
   ngOnInit() {
+    this.authenticationRepositoryService.getUser().subscribe(user => {
+      this.user = user;
+    });
   }
 
 }

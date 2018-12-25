@@ -5,6 +5,8 @@ import {FormGroup} from '@angular/forms';
 import {DynamicFormService, IField} from 'ng-field-management';
 import {LOGIN} from './form-login.constant';
 import {IUser} from '../../../../core/interfaces/i-user';
+import {AuthenticationService} from '../../../../security/authentication.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,9 +17,12 @@ export class LoginComponent implements OnInit {
 
   public loginForm: FormGroup;
   public fields: Array<IField> = LOGIN;
+  public isLoading: boolean;
 
   constructor(
-    private dynamicFormService: DynamicFormService
+    private dynamicFormService: DynamicFormService,
+    private authenticationService: AuthenticationService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -27,7 +32,10 @@ export class LoginComponent implements OnInit {
 
   public login (user: IUser, isValid: boolean) {
     if (isValid) {
-        console.log(user);
+        this.isLoading = true;
+        this.authenticationService.login(user).subscribe( () => {
+          this.router.navigate(['/dashboard/ipc'], {} );
+        });
     }
   }
 

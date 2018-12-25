@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 
 import { AppComponent } from './app.component';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AppRoutesModule} from './app.route';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -10,9 +10,11 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {CookieService} from 'ng2-cookies';
-import {AuthenticationService} from './core/services/authentication.service';
-import {AuthenticationRepositoryService} from './core/services/authentication-repository.service';
-import {AuthenticationGuardService} from './core/services/authentication-guard.service';
+import {AuthenticationService} from './security/authentication.service';
+import {AuthenticationRepositoryService} from './security/authentication-repository.service';
+import {AuthenticationGuardService} from './security/authentication-guard.service';
+import {RequestHttpInterceptor} from './security/request-http-interceptor';
+
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -46,7 +48,12 @@ export function createTranslateLoader(http: HttpClient) {
     CookieService,
     AuthenticationService,
     AuthenticationRepositoryService,
-    AuthenticationGuardService
+    AuthenticationGuardService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: RequestHttpInterceptor,
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent]
 })

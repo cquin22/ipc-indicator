@@ -9,6 +9,8 @@ import { TopNavigatorComponent } from './components/top-navigator/top-navigator.
 import {ChartSeriesTooltipTemplateComponent} from './components/chart-series-tooltip-template/chart-series-tooltip-template.component';
 import {ChartTooltipTemplateComponent} from './components/chart-tooltip-template/chart-tooltip-template.component';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
+import {IpcService} from '../../core/services/ipc-service';
+import {LoaderComponent} from '../../core/components/loader/loader.component';
 
 @NgModule({
   imports: [
@@ -21,10 +23,12 @@ import {NgxChartsModule} from '@swimlane/ngx-charts';
     CUSTOM_ELEMENTS_SCHEMA
   ],
   providers: [
-    DatePipe
+    DatePipe,
+    IpcService
   ],
   declarations: [
     IndexPanelComponent,
+    LoaderComponent,
     IpcComponent,
     LeftMenuComponent,
     TopNavigatorComponent,

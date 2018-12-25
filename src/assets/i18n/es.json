@@ -1,5 +1,9 @@
 {
   "EMAIL_PLACEHOLDER": "Ingresa un email valido",
   "PASSWORD_CREATE_PLACEHOLDER": "Ingresa la contraseña",
-  "LOGIN_BUTTON": "Ingresar"
+  "LOGIN_BUTTON": "Ingresar",
+  "SUMMARY_CREDITS": "Ingresos IPC",
+  "DASHBOARD_HOME": "Dashboard",
+  "SUMMARY": "Resumen",
+  "CONTACT": "Contactos"
 }

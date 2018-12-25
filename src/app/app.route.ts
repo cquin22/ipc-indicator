@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core';
 import {AuthenticateModule} from './modules/authenticate/authenticate.module';
 import {environment as ENV} from '../environments/environment';
 import {DashboardModule} from './modules/dashboard/dashboard.module';
+import {AuthenticationGuardService} from './security/authentication-guard.service';
 
 
 
@@ -29,6 +30,7 @@ export function routes(): Routes {
     },
     {
       path: 'dashboard',
+      canActivate: [AuthenticationGuardService],
       loadChildren: ENV.production ? './modules/dashboard/dashboard.module#DashboardModule' : loadDashboardModule
     }
   ];

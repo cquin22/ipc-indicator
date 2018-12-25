@@ -3,9 +3,9 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {tap} from 'rxjs/operators';
 import {AuthenticationRepositoryService} from './authentication-repository.service';
-import {IUser} from '../interfaces/i-user';
-import {environment as ENV } from '../../../environments/environment';
-import {ISuccessAuthenticate} from '../interfaces/i-success-authenticate';
+import {IUser} from '../core/interfaces/i-user';
+import {environment as ENV } from '../../environments/environment';
+import {ISuccessAuthenticate} from '../core/interfaces/i-success-authenticate';
 const CONTEXT_URL = '/users';
 
 @Injectable()
@@ -15,11 +15,11 @@ export class AuthenticationService {
     private authRepo: AuthenticationRepositoryService,
   ) {}
 
-  public getMe(): Observable<IUser> {
-    return this.http.get<IUser>(ENV.api + '/users')
+  public getMe(): Observable<any> {
+    return this.http.get<any>(ENV.api + '/users')
       .pipe(
-        tap((response: IUser) => {
-          console.log(response);
+        tap((response: any) => {
+          this.authRepo.setUser(response.user);
         })
       );
   }

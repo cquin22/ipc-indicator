@@ -2,8 +2,8 @@ import {Injectable} from '@angular/core';
 import {CookieService} from 'ng2-cookies';
 import {BehaviorSubject} from 'rxjs';
 import {Observable} from 'rxjs';
-import {IUser} from '../interfaces/i-user';
-import {ISuccessAuthenticate} from '../interfaces/i-success-authenticate';
+import {IUser} from '../core/interfaces/i-user';
+import {ISuccessAuthenticate} from '../core/interfaces/i-success-authenticate';
 const SESSION = '_token';
 
 @Injectable()
@@ -37,6 +37,10 @@ export class AuthenticationRepositoryService {
 
   public setToken() {
     this.token$.next(this.cookieService.get(SESSION));
+  }
+
+  public setUser(user: IUser) {
+    this.user$.next(user);
   }
 
   public getUser(): Observable<IUser> {
