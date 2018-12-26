@@ -10,8 +10,10 @@ import {ChartSeriesTooltipTemplateComponent} from './components/chart-series-too
 import {ChartTooltipTemplateComponent} from './components/chart-tooltip-template/chart-tooltip-template.component';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 import {IpcService} from '../../core/services/ipc-service';
-import {LoaderComponent} from '../../core/components/loader/loader.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { SummaryComponent } from './pages/summary/summary.component';
 
+// @ts-ignore
 @NgModule({
   imports: [
     CommonModule,
@@ -28,11 +30,12 @@ import {LoaderComponent} from '../../core/components/loader/loader.component';
   ],
   declarations: [
     IndexPanelComponent,
-    LoaderComponent,
     IpcComponent,
     LeftMenuComponent,
     TopNavigatorComponent,
     ChartSeriesTooltipTemplateComponent,
-    ChartTooltipTemplateComponent]
+    ChartTooltipTemplateComponent,
+    ContactComponent,
+    SummaryComponent]
 })
 export class DashboardModule { }

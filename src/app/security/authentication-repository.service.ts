@@ -47,5 +47,19 @@ export class AuthenticationRepositoryService {
     return this.user$.asObservable();
   }
 
+  public roleMatch(allowedRoles: Array<any>, user: IUser): boolean {
+    let isMatch = false;
+    if (user.role) {
+      allowedRoles.forEach(element => {
+        if (user.role === element) {
+          isMatch = true;
+          return false;
+        }
+      });
+    }
+
+    return isMatch;
+  }
+
 
 }

@@ -1,4 +1,4 @@
-<div class="top-header" (clickOutside)="close()">
+<div class="top-header">
   <div class="col text-right" >
     <ul class="menu" >
       <li *ngFor="let menu of dataMenu ; let i = index" >
@@ -8,7 +8,7 @@
           <span *ngIf="menu.textTypeRender === 'TEXT'">{{menu.title}}</span>
         </div>
         <div class="only-icon" *ngIf="menu.type === 'ONLY_ICON'">
-          <i class="material-icons">
+          <i [routerLink]="menu.link" class="material-icons">
             {{menu.icon}}
           </i>
         </div>

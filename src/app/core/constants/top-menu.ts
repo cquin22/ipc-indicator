@@ -5,7 +5,7 @@ import {TextRenderType} from '../enums/text-render.type';
 export const TOP_MENU: Array<IMenu> =  [
   {
     'title': null,
-    'link':     '/logout',
+    'link':     '/authenticate/logout',
     'icon':     'exit_to_app',
     'isParent': false,
     'action': null,

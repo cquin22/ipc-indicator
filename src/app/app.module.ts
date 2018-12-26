@@ -14,6 +14,8 @@ import {AuthenticationService} from './security/authentication.service';
 import {AuthenticationRepositoryService} from './security/authentication-repository.service';
 import {AuthenticationGuardService} from './security/authentication-guard.service';
 import {RequestHttpInterceptor} from './security/request-http-interceptor';
+import {ToastrModule} from 'ng6-toastr-notifications';
+import {RoleGuardService} from './security/role-guard.service';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -32,6 +34,7 @@ export function createTranslateLoader(http: HttpClient) {
     AppRoutesModule,
     BrowserAnimationsModule,
     NgbModule.forRoot(),
+    ToastrModule.forRoot(),
     BrowserModule,
     TranslateModule.forRoot({
       loader: {
@@ -49,6 +52,7 @@ export function createTranslateLoader(http: HttpClient) {
     AuthenticationService,
     AuthenticationRepositoryService,
     AuthenticationGuardService,
+    RoleGuardService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: RequestHttpInterceptor,

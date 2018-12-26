@@ -8,6 +8,7 @@ import {NgFieldsCoreModule} from 'ng-field-management';
 import {TranslateModule} from '@ngx-translate/core';
 import {AuthenticationService} from '../../security/authentication.service';
 import {LoaderComponent} from '../../core/components/loader/loader.component';
+import { LogoutComponent } from './pages/logout/logout.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import {LoaderComponent} from '../../core/components/loader/loader.component';
   declarations: [
     IndexAuthenticateComponent,
     LoginComponent,
-    LoaderComponent
+    LoaderComponent,
+    LogoutComponent
   ]
 })
 export class AuthenticateModule { }

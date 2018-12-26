@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {AuthenticationRepositoryService} from './authentication-repository.service';
+import {ToastrManager} from 'ng6-toastr-notifications';
 
 
 
@@ -16,6 +17,7 @@ export class RequestHttpInterceptor implements HttpInterceptor {
   constructor(
     private modalService: NgbModal,
     private authenticationRepository: AuthenticationRepositoryService,
+    public toastr: ToastrManager
   ) {
     this.authenticationRepository.getToken().subscribe(this.setTokenIfAny.bind(this));
   }
@@ -35,6 +37,7 @@ export class RequestHttpInterceptor implements HttpInterceptor {
         }, error => {
           // http response status code
           console.log(error);
+          this.toastr.errorToastr(error.error.message, 'Oops!');
         })
       );
 

@@ -35,6 +35,8 @@ export class LoginComponent implements OnInit {
         this.isLoading = true;
         this.authenticationService.login(user).subscribe( () => {
           this.router.navigate(['/dashboard/ipc'], {} );
+        }, error1 => {
+          this.isLoading = false;
         });
     }
   }
